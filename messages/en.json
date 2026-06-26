@@ -1,0 +1,516 @@
+{
+  "metadata": {
+    "siteName": "Overwatch",
+    "tagline": "Intelligence-Led Security. AI-Driven Defense.",
+    "home": {
+      "title": "Overwatch | Intelligence-Led Security & AI-Driven Defense",
+      "description": "Overwatch Technologies provides intelligence-led security and AI-driven defense for properties in Mozambique. Turn your existing CCTV into a proactive security asset."
+    },
+    "business": {
+      "title": "Business Security Solutions | Overwatch",
+      "description": "AI-powered virtual guarding for warehouses, offices, industrial sites, schools, banks, and commercial properties in Mozambique."
+    },
+    "homes": {
+      "title": "Home Security Solutions | Overwatch",
+      "description": "Protect your family with 24/7 AI monitoring for private residences — pools, perimeter, staff, and overnight surveillance."
+    },
+    "about": {
+      "title": "How It Works | Overwatch",
+      "description": "Discover how Overwatch transforms your existing CCTV into intelligent, proactive security in as little as 3 days."
+    },
+    "faq": {
+      "title": "FAQ | Overwatch",
+      "description": "Frequently asked questions about Overwatch AI-powered virtual guarding and remote monitoring services."
+    },
+    "contact": {
+      "title": "Contact Us | Overwatch",
+      "description": "Request a free site assessment. Contact Overwatch for AI-powered virtual guarding in Maputo and across Mozambique."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "business": "Industries",
+    "homes": "Homes",
+    "about": "About Overwatch",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Book Assessment",
+    "whatsapp": "Speak to an Agent"
+  },
+  "launchStrip": {
+    "launch": "Launching June 2026",
+    "pills": [
+      "Maputo / Matola priority",
+      "12-month contract",
+      "3 months cloud storage included",
+      "Prices exclude VAT"
+    ]
+  },
+  "hero": {
+    "badge": "Intelligence-Led Security",
+    "headline": "Turn Your CCTV Into",
+    "headlineAccent": "an Active Security System",
+    "description": "Overwatch helps businesses detect intrusions, suspicious activity, and security risks in real time by using AI-driven CCTV monitoring and remote incident management.",
+    "ctaPrimary": "Book a Free Security Assessment",
+    "ctaSecondary": "Speak to an Agent"
+  },
+  "problem": {
+    "label": "The Vulnerability",
+    "title": "Security Problems Do Not Start When the Alarm Rings",
+    "quietRisks": {
+      "title": "Quiet Security Risks",
+      "description": "For logistics companies, warehouses, and retail operations, security risks often happen quietly:",
+      "items": [
+        "Unauthorized access.",
+        "Staff entering restricted areas.",
+        "Suspicious movement after hours.",
+        "Vehicles arriving outside approved times.",
+        "Guards not following patrol routines.",
+        "Stock disappearing without clear evidence.",
+        "Incidents only discovered the next morning."
+      ]
+    },
+    "passiveCost": {
+      "title": "The Real Cost of Passive CCTV",
+      "description": "Passive CCTV often creates a false sense of security. You may have cameras, but that does not mean you have control. If nobody is watching at the right moment, your business may only discover the problem after:",
+      "items": [
+        "Stock has disappeared.",
+        "A vehicle has been tampered with.",
+        "A restricted area has been accessed.",
+        "A guard has failed to report an incident.",
+        "A break-in has already happened.",
+        "A staff member has breached procedure.",
+        "A client is asking for answers."
+      ],
+      "outro": "Overwatch is designed to close this gap."
+    },
+    "quote": "Traditional CCTV is useful, but only if someone is actively watching it and knows what to do when something happens. Overwatch changes this.\n\nWe combine CCTV, AI-driven detection, remote monitoring, and incident escalation to help your business move from passive surveillance to active security control."
+  },
+  "solution": {
+    "label": "The Solution",
+    "title": "Overwatch Virtual Guard",
+    "description": "AI-Assisted Remote Security Monitoring for Business Sites",
+    "steps": {
+      "monitor": {
+        "title": "Complement & Enhance",
+        "description": "Overwatch Virtual Guard is designed to complement, enhance, or reduce dependency on traditional physical guarding."
+      },
+      "verify": {
+        "title": "Exception Alerts",
+        "description": "By integrating with your existing or new CCTV infrastructure, Overwatch uses AI-driven exception alerts to detect human movement, intrusion, and suspicious activity in defined areas."
+      },
+      "deter": {
+        "title": "Remote Verification",
+        "description": "When an event is detected, our monitoring team verifies the situation remotely and escalates it according to your site procedures."
+      },
+      "document": {
+        "title": "Smarter Monitoring",
+        "description": "This gives your business a smarter way to monitor sites, manage incidents, and maintain visibility without relying only on on-site guards."
+      }
+    }
+  },
+  "whyChoose": {
+    "label": "Why Overwatch",
+    "title": "Why Businesses Choose Overwatch",
+    "description": "We complement your physical security measures to provide active, intelligent site control.",
+    "benefits": {
+      "guards": {
+        "title": "Reduce Dependence on Physical Guards",
+        "description": "Physical guards remain useful, but they have limitations. They can become tired, distracted, absent, intimidated, or compromised. Overwatch provides an additional layer of control by monitoring key areas remotely and generating alerts when activity is detected."
+      },
+      "detection": {
+        "title": "Detect Incidents Earlier",
+        "description": "CCTV footage is often reviewed only after stock loss, intrusion, or damage has already happened. Overwatch helps identify incidents while they are happening, giving your business a better chance to respond quickly."
+      },
+      "visibility": {
+        "title": "Improve Management Visibility",
+        "description": "Owners, directors, and operations managers cannot be everywhere at once. Overwatch gives decision-makers better visibility over what is happening across their sites, especially after hours or across multiple locations."
+      },
+      "accountability": {
+        "title": "Strengthen Accountability",
+        "description": "When a site is monitored actively, staff and guards know that critical areas are being watched and incidents are being recorded. This improves accountability and reduces reliance on manual reporting alone."
+      },
+      "protection": {
+        "title": "Protect Stock, Assets, and Operations",
+        "description": "For businesses with high-value inventory, vehicles, equipment, or cash flow, delayed detection can be expensive. Overwatch helps protect your operational continuity by reducing blind spots and improving incident escalation."
+      }
+    }
+  },
+  "business": {
+    "label": "Business Protection",
+    "title": "Built for Logistics, Warehouses, and Retail Operations",
+    "description": "Protect your assets, staff, and operations with intelligent virtual guarding tailored to commercial environments.",
+    "sectors": {
+      "title": "Sectors We Protect",
+      "items": [
+        {
+          "title": "Logistics Companies",
+          "description": "Logistics businesses operate with constant movement: vehicles, drivers, loading teams, dispatch areas, stock, and delivery schedules.",
+          "helpsMonitor": "Overwatch helps logistics operators monitor:",
+          "bullets": [
+            "Vehicle yards",
+            "Loading and offloading zones",
+            "Driver access points",
+            "Dispatch areas",
+            "Perimeter activity",
+            "After-hours movement",
+            "Unauthorized access",
+            "Suspicious behaviour near vehicles or cargo"
+          ],
+          "outro": "This helps reduce operational blind spots and gives management more control over site security."
+        },
+        {
+          "title": "Warehouses and Storage Facilities",
+          "description": "Warehouses are vulnerable because large spaces, stock movement, and multiple staff access points make it difficult to monitor everything manually.",
+          "helpsMonitor": "Overwatch helps warehouse operators detect:",
+          "bullets": [
+            "Human movement after hours",
+            "Access to restricted areas",
+            "Unusual movement near stock",
+            "Activity in storage zones",
+            "Intrusion through gates, walls, or perimeter areas",
+            "Loading bay activity outside approved hours",
+            "Security guard non-compliance"
+          ],
+          "outro": "This supports stock protection, incident verification, and better operational discipline."
+        },
+        {
+          "title": "Medium and Large Retail Stores",
+          "description": "Retail stores face a combination of internal and external risks, including shoplifting, staff misconduct, after-hours access, and stock room losses.",
+          "helpsMonitor": "Overwatch helps retail operators monitor:",
+          "bullets": [
+            "Entrances and exits",
+            "Back doors",
+            "Stock rooms",
+            "Cash handling areas",
+            "Loading areas",
+            "Staff-only zones",
+            "After-hours movement",
+            "Suspicious activity around the premises"
+          ],
+          "outro": "This gives store owners and managers better visibility without needing to be physically present at all times."
+        },
+        {
+          "title": "Distribution Centres",
+          "description": "Distribution centres are high-movement environments where delays, access breaches, and stock loss can quickly affect the wider business.",
+          "helpsMonitor": "Overwatch helps monitor:",
+          "bullets": [
+            "Truck movement",
+            "Cargo areas",
+            "Perimeter zones",
+            "Dispatch points",
+            "Access-controlled areas",
+            "High-value goods zones",
+            "Night-time activity",
+            "Operational exceptions"
+          ],
+          "outro": "This improves control over both security and site discipline."
+        }
+      ]
+    },
+    "implementation": {
+      "title": "Simple 4-Step Implementation",
+      "steps": [
+        {
+          "title": "Site Assessment",
+          "description": "We evaluate your existing camera infrastructure, coverage gaps, and security requirements — free of charge."
+        },
+        {
+          "title": "System Integration",
+          "description": "Our team connects your compatible cameras to the Overwatch platform with minimal hardware additions."
+        },
+        {
+          "title": "AI Calibration",
+          "description": "We configure detection zones, sensitivity levels, and escalation protocols tailored to your site."
+        },
+        {
+          "title": "Go Live",
+          "description": "24/7 monitoring begins from our operations center. You're protected within days, not months."
+        }
+      ]
+    },
+    "whyNow": {
+      "title": "Your Business Cannot Afford to Wait Until After the Incident",
+      "description": "Security threats are not only external. Many losses happen because of poor visibility, weak procedures, delayed response, or lack of accountability.\n\nFor businesses handling stock, vehicles, equipment, deliveries, and cash, one serious incident can cost more than months of active monitoring.\n\nOverwatch gives your business a practical way to reduce that risk."
+    },
+    "cta": "Request Business Assessment"
+  },
+  "homes": {
+    "label": "For Homes",
+    "title": "Peace of Mind for Your Family",
+    "description": "Protect what matters most with intelligent monitoring designed for private residences — whether you're home or away.",
+    "features": {
+      "family": {
+        "title": "Family Safety",
+        "description": "Monitor children playing, verify visitors at the gate, and ensure household staff activity aligns with your expectations."
+      },
+      "perimeter": {
+        "title": "Perimeter Protection",
+        "description": "AI-powered fence line and boundary detection alerts you to intrusions before anyone reaches your home."
+      },
+      "pool": {
+        "title": "Pool & Outdoor Areas",
+        "description": "Dedicated monitoring for pools, gardens, and outdoor spaces — especially critical when children are present."
+      },
+      "overnight": {
+        "title": "Overnight Monitoring",
+        "description": "Sleep soundly knowing trained operators are watching your property through the night, ready to deter and escalate."
+      }
+    },
+    "cta": "Request Home Assessment"
+  },
+  "howItWorks": {
+    "label": "How It Works",
+    "title": "How Overwatch Works",
+    "description": "From Assessment to Active Protection in Days",
+    "flow": [
+      {
+        "step": "01",
+        "title": "We Assess Your Site",
+        "description": "We review your existing CCTV system, site layout, vulnerable areas, access points, operating hours, and current security procedures. This allows us to identify where Overwatch can add the most value."
+      },
+      {
+        "step": "02",
+        "title": "We Define Detection Zones",
+        "description": "Together, we define critical areas such as: perimeters, entrances and exits, loading bays, stock rooms, warehouse aisles, restricted areas, vehicle access points, cash handling areas, high-value storage zones, and after-hours movement areas.\n\nThe system is configured to focus on the areas that matter most to your business."
+      },
+      {
+        "step": "03",
+        "title": "AI Detects Exceptions",
+        "description": "Instead of relying only on someone watching multiple screens, the system generates alerts when specific activity is detected. Examples include:\n\n• Human detection after hours\n• Intrusion into restricted zones\n• Movement in no-access areas\n• Activity at loading bays outside approved times\n• Unexpected presence near stock or assets\n• Perimeter movement\n• Potential operational breaches"
+      },
+      {
+        "step": "04",
+        "title": "Our Team Verifies the Incident",
+        "description": "Alerts are reviewed by the Overwatch monitoring team to reduce unnecessary escalation and confirm whether the event requires action. This helps avoid relying only on raw camera footage or delayed reporting."
+      },
+      {
+        "step": "05",
+        "title": "We Escalate According to Your Protocol",
+        "description": "Once verified, incidents are escalated to the right contact or response team. Escalation can include:\n\n• Client focal point notification\n• Site manager notification\n• Security supervisor notification\n• Physical guard instruction\n• Incident logging and follow-up reporting"
+      }
+    ],
+    "capabilities": {
+      "title": "Platform Capabilities",
+      "items": [
+        "Perimeter intrusion detection",
+        "Loitering and suspicious behavior analysis",
+        "Vehicle and license plate recognition",
+        "Fire and smoke early detection",
+        "Crowd and occupancy monitoring",
+        "After-hours access control verification",
+        "Multi-camera correlation and tracking",
+        "Live two-way audio deterrence"
+      ]
+    }
+  },
+  "stats": {
+    "monitoring": { "value": "24/7/365", "label": "Centralized Monitoring" },
+    "response": { "value": "<30s", "label": "Critical Response Time" },
+    "compliance": { "value": "ISO-Certified", "label": "Compliance Standards" }
+  },
+  "pricing": {
+    "label": "Service Tiers",
+    "title": "Managed Monitoring Plans",
+    "description": "All tiers include AI-enhanced detection, operator verification, escalation workflows, and 3 months cloud storage. 12-month operational contract. Prices exclude VAT.",
+    "setup": {
+      "label": "Once-off setup:",
+      "value": "2,500 MZN installation fee & 4,000 MZN hardware deposit."
+    },
+    "cta": "Initialize Onboarding",
+    "plans": {
+      "four": {
+        "name": "4 Cameras",
+        "price": "13,500",
+        "currency": "MZN / mo",
+        "features": [
+          "AI Enhanced Detection",
+          "Elite Human Verification",
+          "WhatsApp / Phone Escalation",
+          "3 Months Cloud Storage",
+          "Standard Support SLA"
+        ]
+      },
+      "eight": {
+        "name": "8 Cameras",
+        "badge": "Standard Enterprise",
+        "price": "22,500",
+        "currency": "MZN / mo",
+        "featured": true,
+        "features": [
+          "Everything in 4 Cameras",
+          "Active Deterrence Integration",
+          "Priority Response Handling",
+          "Dedicated Account Manager",
+          "Quarterly Security Assessment"
+        ]
+      },
+      "sixteen": {
+        "name": "16 Cameras",
+        "price": "39,500",
+        "currency": "MZN / mo",
+        "features": [
+          "Everything in 8 Cameras",
+          "Custom SOP Integration",
+          "Multi-site Dashboard Access",
+          "API Access for Third-party Integration",
+          "Premium Support SLA"
+        ]
+      }
+    },
+    "discounts": {
+      "title": "Upfront Commitment Discounts",
+      "items": [
+        { "label": "3 Months Upfront", "value": "2%", "featured": false },
+        { "label": "6 Months Upfront", "value": "7%", "featured": true, "badge": "Most Selected" },
+        { "label": "12 Months Upfront", "value": "12%", "featured": false }
+      ],
+      "word": "discount"
+    }
+  },
+  "comparison": {
+    "label": "Comparison",
+    "title": "Traditional CCTV vs Overwatch",
+    "headers": {
+      "traditional": "Traditional CCTV",
+      "overwatch": "Overwatch"
+    },
+    "rows": [
+      {
+        "traditional": "Records footage for later review",
+        "overwatch": "Detects activity and triggers alerts"
+      },
+      {
+        "traditional": "Depends on someone watching manually",
+        "overwatch": "Uses AI-driven exception monitoring"
+      },
+      {
+        "traditional": "Incidents often discovered too late",
+        "overwatch": "Incidents can be escalated while active"
+      },
+      {
+        "traditional": "Limited management visibility",
+        "overwatch": "Remote visibility and structured escalation"
+      },
+      {
+        "traditional": "Guards operate with limited supervision",
+        "overwatch": "Guard performance can be monitored"
+      },
+      {
+        "traditional": "Reactive security",
+        "overwatch": "Active security control"
+      }
+    ]
+  },
+  "guardingAngle": {
+    "title": "Not Just Another CCTV System",
+    "subtitle": "Overwatch is not simply CCTV installation. It is a virtual guarding solution designed to support real security operations.",
+    "fromLabel": "We help businesses move from:",
+    "fromText": "\"Do we have footage?\"",
+    "toLabel": "to",
+    "toText": "\"Did we detect it, verify it, and respond properly?\"",
+    "outro": "This is the difference between passive surveillance and active security management."
+  },
+  "certification": {
+    "text": "The underlying OverWatch Technologies platform is certified to international standards including ISO 9001, ISO 22301, ISO 27001, and ISO 27701, ensuring that our operational methodology meets global compliance benchmarks for security and data integrity."
+  },
+  "testimonials": {
+    "label": "Trusted By",
+    "title": "What Our Clients Say",
+    "items": [
+      {
+        "quote": "Overwatch transformed our warehouse security. We went from reviewing footage after break-ins to stopping intruders in real time. The ROI was immediate.",
+        "author": "Operations Director",
+        "company": "Logistics Company, Maputo"
+      },
+      {
+        "quote": "Having 24/7 monitoring on our residential compound gives our residents genuine peace of mind. The weekly reports keep our management fully informed.",
+        "author": "Estate Manager",
+        "company": "Residential Compound, Matola"
+      },
+      {
+        "quote": "The integration with our existing cameras was seamless. Within three days we had active AI monitoring — something our previous provider couldn't offer.",
+        "author": "Facility Manager",
+        "company": "Corporate Office, Maputo"
+      }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know about Overwatch virtual guarding and remote monitoring.",
+    "items": [
+      {
+        "question": "Do we need to replace our existing CCTV system?",
+        "answer": "Not always. Overwatch can work with compatible existing CCTV infrastructure. During the assessment, we review your current system and confirm what can be used."
+      },
+      {
+        "question": "Does Overwatch replace physical guards?",
+        "answer": "Overwatch can complement, enhance, or in some cases reduce the need for physical guards. The right model depends on your site, risk profile, operating hours, and response requirements."
+      },
+      {
+        "question": "What happens when the system detects movement?",
+        "answer": "An alert is generated and reviewed by the monitoring team. If the event requires action, it is escalated according to your agreed protocol."
+      },
+      {
+        "question": "Can Overwatch monitor more than one site?",
+        "answer": "Yes. Overwatch is suitable for businesses with multiple branches, warehouses, yards, stores, or operational sites."
+      },
+      {
+        "question": "Is this only for after-hours monitoring?",
+        "answer": "No. Overwatch operates 24/7. Overwatch can be used for after-hours monitoring, operational oversight, restricted area monitoring, guard supervision, and incident detection during defined time periods."
+      },
+      {
+        "question": "Can Overwatch help reduce stock loss?",
+        "answer": "Overwatch helps improve visibility, accountability, and incident detection around stock areas. This can support loss prevention, but it should be combined with strong internal procedures and access control."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Security Assessment",
+    "title": "Book a Free Security Assessment",
+    "description": "Every site is different. Before recommending a solution, we assess your current CCTV system, site layout, risk areas, and operating procedures.\n\nThis allows us to identify:\n• Where your current security gaps are\n• Which cameras can be used\n• Which areas require better coverage\n• Where AI detection should be applied\n• How incidents should be escalated\n• Whether your existing guarding model can be improved\n\nBook your free security assessment today.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company / Property Name",
+      "type": "Property Type",
+      "typeOptions": {
+        "business": "Business / Commercial",
+        "home": "Private Residence",
+        "other": "Other"
+      },
+      "message": "Tell us about your security needs",
+      "submit": "Send Request",
+      "submitting": "Sending...",
+      "success": "Thank you! We'll be in touch within 24 hours.",
+      "error": "Something went wrong. Please try again or call us directly."
+    },
+    "info": {
+      "email": "info@overwatchmoz.com",
+      "phone": "+258 85 362 6792",
+      "website": "www.overwatchmoz.com",
+      "location": "Maputo, Mozambique"
+    }
+  },
+  "cta": {
+    "title": "Start With Your Existing Cameras. Build a Smarter Security Operation.",
+    "description": "Your CCTV should not only record incidents. It should help prevent, detect, verify, and escalate them.\n\nOverwatch gives businesses a more active, intelligent, and accountable way to manage site security.",
+    "button": "Book a Free Security Assessment"
+  },
+  "footer": {
+    "description": "Intelligence-Led Security. AI-Driven Defense. Turning standard CCTV into a proactive security asset through advanced AI and elite human oversight.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "back": "Back to Home"
+  }
+}

@@ -1,0 +1,249 @@
+import { useTranslations } from "next-intl";
+import { Mail, Phone, Globe, MapPin, ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import Logo from "@/components/ui/Logo";
+
+const footerSections = [
+  {
+    title: "Solutions",
+    links: [
+      { href: "/business", key: "business" as const, description: "Enterprise Security" },
+      { href: "/homes", key: "homes" as const, description: "Home Protection" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", key: "about" as const, description: "How It Works" },
+      { href: "/", key: "home" as const, description: "Overview" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/faq", key: "faq" as const, description: "Help Center" },
+      { href: "/contact", key: "contact" as const, description: "Get in Touch" },
+    ],
+  },
+];
+
+const socialLinks = [
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/258853626792",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    ),
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/overwatchmoz",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@overwatchmoz",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+];
+
+export default function Footer() {
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
+  const tContact = useTranslations("contact.info");
+  const tMeta = useTranslations("metadata");
+  const tCta = useTranslations("cta");
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="relative border-t border-border bg-primary-darker overflow-hidden">
+      {/* Subtle top gradient accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+
+      {/* Background tech pattern */}
+      <div className="absolute inset-0 hex-pattern opacity-30 pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        {/* Top section: Logo + Newsletter */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-12 pb-12 border-b border-border/50">
+          {/* Brand column */}
+          <div className="lg:col-span-2">
+            <Logo size="sm" />
+            <p className="mt-4 text-muted text-sm leading-relaxed max-w-sm">
+              {t("description")}
+            </p>
+            <p className="mt-3 text-accent text-sm font-medium">{tMeta("tagline")}</p>
+
+            {/* Social links */}
+            <div className="mt-5 flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full border border-border text-muted hover:text-accent hover:border-accent hover:bg-accent/5 transition-all duration-300"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick links */}
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {footerSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                  {section.title}
+                </h3>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="group"
+                      >
+                        <div className="text-foreground hover:text-accent text-sm font-medium transition-colors">
+                          {tNav(link.key)}
+                        </div>
+                        <div className="text-muted text-xs mt-0.5 group-hover:text-accent/70 transition-colors">
+                          {link.description}
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA column */}
+          <div className="lg:col-span-1">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+              {tNav("cta")}
+            </h3>
+            <p className="text-foreground text-sm mb-4 leading-relaxed">
+              {tCta("description")}
+            </p>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-primary-dark font-semibold text-sm hover:shadow-[0_0_30px_rgba(201,162,39,0.4)] transition-all duration-300"
+              >
+                {tNav("cta")}
+                <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+              <a
+                href="https://wa.me/258853626792"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-accent/50 text-accent text-sm hover:bg-accent/10 hover:border-accent transition-all duration-300"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                {tNav("whatsapp")}
+                <ExternalLink size={14} className="text-accent/50 group-hover:text-accent transition-colors" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle section: Contact info */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="flex items-start gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
+              <Mail size={16} className="text-accent" />
+            </div>
+            <div>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Email</p>
+              <a
+                href={`mailto:${tContact("email")}`}
+                className="text-foreground hover:text-accent text-sm transition-colors"
+              >
+                {tContact("email")}
+              </a>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
+              <Phone size={16} className="text-accent" />
+            </div>
+            <div>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Phone</p>
+              <a
+                href={`tel:${tContact("phone").replace(/\s/g, "")}`}
+                className="text-foreground hover:text-accent text-sm transition-colors"
+              >
+                {tContact("phone")}
+              </a>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
+              <Globe size={16} className="text-accent" />
+            </div>
+            <div>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Website</p>
+              <a
+                href="https://www.overwatchmoz.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-accent text-sm transition-colors"
+              >
+                {tContact("website")}
+              </a>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
+              <MapPin size={16} className="text-accent" />
+            </div>
+            <div>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Location</p>
+              <p className="text-foreground text-sm">{tContact("location")}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-muted text-sm">
+            © {year} Overwatch. {t("rights")}
+          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.overwatchmoz.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-accent text-xs transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-border/50 text-xs">|</span>
+            <a
+              href="https://www.overwatchmoz.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-accent text-xs transition-colors"
+            >
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
