@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -51,14 +51,22 @@ export default function Navbar() {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(
+    null,
+  );
+  const [openMobileDropdowns, setOpenMobileDropdowns] = useState<Set<string>>(
+    new Set(),
+  );
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -66,8 +74,41 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  // Close desktop dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpenDesktopDropdown(null);
+      }
+    };
+
+    if (openDesktopDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [openDesktopDropdown]);
+
   const closeMobileMenu = () => {
     setMobileOpen(false);
+    setOpenMobileDropdowns(new Set());
+  };
+
+  const toggleMobileDropdown = (title: string) => {
+    const newOpen = new Set(openMobileDropdowns);
+    if (newOpen.has(title)) {
+      newOpen.delete(title);
+    } else {
+      newOpen.add(title);
+    }
+    setOpenMobileDropdowns(newOpen);
+  };
+
+  const handleDesktopDropdownClick = (title: string) => {
+    setOpenDesktopDropdown(openDesktopDropdown === title ? null : title);
   };
 
   return (
@@ -88,7 +129,8 @@ export default function Navbar() {
             <Logo size="sm" />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
             {/* Standalone Links */}
             {navLinks.map((link) => (
               <Link
@@ -103,36 +145,49 @@ export default function Navbar() {
 
             {/* Dropdown Menus */}
             {dropdownMenus.map((menu) => (
-              <div
-                key={menu.title}
-                className="relative"
-                onMouseEnter={() => setOpenDropdown(menu.title)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <button className="group flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors">
+              <div key={menu.title} className="relative group">
+                <button
+                  onClick={() => handleDesktopDropdownClick(menu.title)}
+                  onMouseEnter={() => setOpenDesktopDropdown(menu.title)}
+                  onMouseLeave={() => setOpenDesktopDropdown(null)}
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+                  aria-expanded={openDesktopDropdown === menu.title}
+                  aria-haspopup="true"
+                >
                   {menu.title}
                   <ChevronDown
                     size={14}
-                    className="transition-transform group-hover:rotate-180"
+                    className={cn(
+                      "transition-transform",
+                      openDesktopDropdown === menu.title ? "rotate-180" : "",
+                    )}
                   />
                 </button>
 
-                {openDropdown === menu.title && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-primary-darker/95 backdrop-blur-md border border-border rounded-lg shadow-xl py-2 z-50">
-                    {menu.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-accent/5 transition-colors"
-                      >
-                        <div className="font-medium">{t(link.key)}</div>
-                        <div className="text-xs text-foreground/50">
-                          {link.description}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {/* Dropdown Content */}
+                <div
+                  className={cn(
+                    "absolute top-full left-0 mt-0 w-48 bg-primary-darker/95 backdrop-blur-md border border-border rounded-lg shadow-xl py-2 z-50",
+                    "opacity-0 invisible transition-all duration-200 group-hover:opacity-100 group-hover:visible",
+                    openDesktopDropdown === menu.title && "opacity-100 visible",
+                  )}
+                  onMouseEnter={() => setOpenDesktopDropdown(menu.title)}
+                  onMouseLeave={() => setOpenDesktopDropdown(null)}
+                >
+                  {menu.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-accent/5 transition-colors"
+                      onClick={() => setOpenDesktopDropdown(null)}
+                    >
+                      <div className="font-medium">{t(link.key)}</div>
+                      <div className="text-xs text-foreground/50">
+                        {link.description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             ))}
 
@@ -193,27 +248,45 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Dropdown Menus - Expanded */}
+            {/* Dropdown Menus - Collapsible */}
             {dropdownMenus.map((menu) => (
               <div key={menu.title}>
-                <div className="py-3 px-4 text-lg font-semibold text-accent">
-                  {menu.title}
-                </div>
-                {menu.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block py-2 px-6 text-base font-medium text-foreground hover:text-accent hover:bg-accent/5 transition-colors"
-                    onClick={closeMobileMenu}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span>{t(link.key)}</span>
-                      <span className="text-xs text-foreground/50">
-                        {link.description}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
+                <button
+                  onClick={() => toggleMobileDropdown(menu.title)}
+                  className="w-full py-3 px-4 text-lg font-semibold text-accent hover:bg-accent/5 rounded-lg transition-colors flex items-center justify-between"
+                  aria-expanded={openMobileDropdowns.has(menu.title)}
+                  aria-haspopup="true"
+                >
+                  <span>{menu.title}</span>
+                  <ChevronDown
+                    size={18}
+                    className={cn(
+                      "transition-transform",
+                      openMobileDropdowns.has(menu.title) ? "rotate-180" : "",
+                    )}
+                  />
+                </button>
+
+                {/* Collapsible Links */}
+                {openMobileDropdowns.has(menu.title) && (
+                  <div className="pl-4 space-y-1 animate-in fade-in slide-in-from-top-2">
+                    {menu.links.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block py-2 px-4 text-base font-medium text-foreground hover:text-accent hover:bg-accent/5 rounded transition-colors"
+                        onClick={closeMobileMenu}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{t(link.key)}</span>
+                          <span className="text-xs text-foreground/50">
+                            {link.description}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
 
