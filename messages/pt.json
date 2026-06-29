@@ -325,7 +325,7 @@
       "four": {
         "name": "4 Câmaras",
         "price": "13.500",
-        "currency": "MZN / mês",
+        "currency": "MZN",
         "features": [
           "Deteção Melhorada por IA",
           "Verificação por Operador de Elite",
@@ -338,7 +338,7 @@
         "name": "8 Câmaras",
         "badge": "Empresa Padrão",
         "price": "22.500",
-        "currency": "MZN / mês",
+        "currency": "MZN",
         "featured": true,
         "features": [
           "Tudo no plano de 4 Câmaras",
@@ -351,7 +351,7 @@
       "sixteen": {
         "name": "16 Câmaras",
         "price": "39.500",
-        "currency": "MZN / mês",
+        "currency": "MZN",
         "features": [
           "Tudo no plano de 8 Câmaras",
           "Integração de SOP Personalizada",

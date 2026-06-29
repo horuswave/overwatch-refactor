@@ -325,7 +325,7 @@
       "four": {
         "name": "4 Cameras",
         "price": "13,500",
-        "currency": "MZN / mo",
+        "currency": "MZN ",
         "features": [
           "AI Enhanced Detection",
           "Elite Human Verification",
@@ -338,7 +338,7 @@
         "name": "8 Cameras",
         "badge": "Standard Enterprise",
         "price": "22,500",
-        "currency": "MZN / mo",
+        "currency": "MZN",
         "featured": true,
         "features": [
           "Everything in 4 Cameras",
@@ -351,7 +351,7 @@
       "sixteen": {
         "name": "16 Cameras",
         "price": "39,500",
-        "currency": "MZN / mo",
+        "currency": "MZN ",
         "features": [
           "Everything in 8 Cameras",
           "Custom SOP Integration",
