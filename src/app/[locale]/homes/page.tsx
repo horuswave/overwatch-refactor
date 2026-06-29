@@ -94,7 +94,7 @@ export default async function HomesPage({ params }: Props) {
             </div>
             <div className="absolute bottom-[20%] right-[20%] w-[25%] h-[30%] detection-box rounded border-green-400/60">
               <span className="absolute -top-7 left-0 text-xs text-green-400 font-mono bg-primary-dark/80 px-2 py-1 rounded">
-                POOL AREA · CLEAR
+                LOUNGE AREA · CLEAR
               </span>
             </div>
           </div>
