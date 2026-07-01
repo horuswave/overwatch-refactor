@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlowCard from "@/components/ui/GlowCard";
-import { IMAGES } from "@/lib/constants";
 
 export default function Problem() {
   const t = useTranslations("problem");
@@ -15,7 +14,7 @@ export default function Problem() {
   return (
     <section id="about" className="py-20 md:py-28 bg-primary-darker/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader label={t("label")} title={t("title")} />
+        <SectionHeader title={t("title")} />
 
         {/* Split Cards Grid */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-16">
@@ -93,16 +92,16 @@ export default function Problem() {
             className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border"
           >
             <Image
-              src={IMAGES.commandCenter}
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80"
               alt=""
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-primary-dark/30" />
+            <div className="absolute inset-0 bg-primary-dark/40" />
             <div className="absolute top-[28%] left-[18%] w-[42%] h-[45%] detection-box rounded">
               <span className="absolute -top-7 left-0 text-xs text-accent font-mono bg-primary-dark/90 px-2 py-1 rounded border border-accent/30">
-                THREAT · VERIFIED
+                AI · MONITORING
               </span>
             </div>
           </motion.div>

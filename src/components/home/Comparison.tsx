@@ -13,7 +13,7 @@ export default function Comparison() {
   return (
     <section className="py-20 md:py-28 border-t border-border bg-primary-dark/20 relative">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader label={t("label")} title={t("title")} />
+        <SectionHeader title={t("title")} />
 
         <div className="grid md:grid-cols-2 gap-8 items-stretch">
           {/* Traditional CCTV column */}

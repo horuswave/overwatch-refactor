@@ -33,10 +33,10 @@ export default function Pricing() {
     t.raw("plans.eight") as Plan,
     t.raw("plans.sixteen") as Plan,
   ];
-  
+
   // State for each plan's upfront payment option
   const [planOptions, setPlanOptions] = useState([3, 3, 3]); // Default to 3 months upfront
-  
+
   const updatePlanOption = (planIndex: number, months: number) => {
     setPlanOptions(prev => {
       const newOptions = [...prev];
@@ -44,22 +44,22 @@ export default function Pricing() {
       return newOptions;
     });
   };
-  
+
   const calculateDiscount = (planIndex: number) => {
     const months = planOptions[planIndex];
-    
+
     // Upfront payment discounts from content
     if (months >= 12) return 12;
     if (months >= 6) return 7;
     if (months >= 3) return 2;
-    
+
     return 0;
   };
 
   return (
     <section id="pricing" className="py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader label={t("label")} title={t("title")} description={t("description")} />
+        <SectionHeader title={t("title")} description={t("description")} />
 
         <div className="text-center mb-12">
           <div className="inline-block rounded-lg border border-accent/30 bg-accent/5 px-5 py-3 text-sm">
@@ -75,7 +75,7 @@ export default function Pricing() {
             const discountedPrice = Math.round(originalPrice * (1 - discount / 100));
             const monthlySavings = originalPrice - discountedPrice;
             const annualSavings = monthlySavings * 12;
-            
+
             return (
               <motion.div
                 key={plan.name}
@@ -98,7 +98,7 @@ export default function Pricing() {
                   hover={!plan.featured}
                 >
                   <h3 className="text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
-                  
+
                   {/* Price Display */}
                   <div className="mb-4">
                     {discount > 0 ? (
@@ -119,17 +119,23 @@ export default function Pricing() {
                         <span className="text-foreground text-sm ml-1">{plan.currency}</span>
                       </div>
                     )}
+                    <div className="text-sm text-muted mt-0.5">
+                      {t("perMonth")}
+                    </div>
                     {discount > 0 && (
                       <div className="text-sm text-accent font-semibold mt-1">
-                        Save {annualSavings.toLocaleString()} {plan.currency}/year ({discount}% off)
+                        {t("saveLabel", { savings: annualSavings.toLocaleString(), currency: plan.currency.trim(), percent: discount })}
                       </div>
                     )}
+                    <div className="text-xs text-foreground/60 mt-1">
+                      {t("totalCommitment", { total: (discount > 0 ? discountedPrice : originalPrice) * planOptions[i], currency: plan.currency.trim() })}
+                    </div>
                   </div>
-                  
+
                   {/* Discount Options */}
                   <div className="mb-4">
                     <label className="block text-xs font-semibold text-foreground mb-2">
-                      Upfront Payment Period
+                      {t("upfrontLabel")}
                     </label>
                     <div className="flex gap-1">
                       {[3, 6, 12].map((months) => {
@@ -145,13 +151,13 @@ export default function Pricing() {
                                 : "bg-primary-darker/50 text-foreground border-border hover:border-accent/50"
                             )}
                           >
-                            {months}mo ({discountPercent}% off)
+                            {months}{t("monthsLabel")} {t("percentOff", { percent: discountPercent })}
                           </button>
                         );
                       })}
                     </div>
                   </div>
-                  
+
                   <ul className="space-y-3 mb-6 flex-1">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex gap-2 text-sm text-foreground">

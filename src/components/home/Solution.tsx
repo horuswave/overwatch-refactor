@@ -18,7 +18,7 @@ export default function Solution() {
     <section id="how" className="py-20 md:py-28 relative">
       <div className="absolute inset-0 tech-grid opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader label={t("label")} title={t("title")} description={t("description")} />
+        <SectionHeader title={t("title")} description={t("description")} />
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div

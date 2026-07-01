@@ -38,24 +38,52 @@
     "faq": "FAQ",
     "contact": "Contacto",
     "cta": "Avaliação Gratuita",
-    "whatsapp": "Falar com um Agente"
+    "whatsapp": "Falar com um Agente",
+    "descriptions": {
+      "home": "Visão Geral",
+      "business": "Para Empresas",
+      "homes": "Para Famílias",
+      "about": "Como Funciona",
+      "faq": "Ajuda",
+      "contact": "Contacte-nos",
+      "pricing": "Planos"
+    },
+    "aria": {
+      "mainNav": "Navegação principal",
+      "closeMenu": "Fechar menu",
+      "openMenu": "Abrir menu"
+    }
   },
-  "launchStrip": {
-    "launch": "Lançamento em Junho 2026",
-    "pills": [
-      "Prioridade Maputo / Matola",
-      "Contrato de 12 meses",
-      "3 meses de armazenamento cloud incluídos",
-      "Preços excluem IVA"
-    ]
+  "navSections": {
+    "solutions": "Soluções",
+    "company": "Empresa",
+    "resources": "Recursos"
+  },
+  "mobileMenu": {
+    "theme": "Tema",
+    "language": "Idioma"
   },
   "hero": {
-    "badge": "SEGURANÇA BASEADA EM INTELIGÊNCIA",
+    "badge": "Segurança Baseada em Inteligência",
     "headline": "Transforme o seu CCTV num",
     "headlineAccent": "Sistema de Segurança Activo",
     "description": "A Overwatch ajuda empresas a detectar intrusões, actividade suspeita e riscos de segurança em tempo real, através de monitorização CCTV com inteligência artificial e gestão remota de incidentes.",
     "ctaPrimary": "Marque uma Avaliação de Segurança Gratuita",
-    "ctaSecondary": "Falar com um Agente"
+    "ctaSecondary": "Falar com um Agente",
+    "benefits": [
+      {
+        "title": "Monitorização Ativa 24/7",
+        "description": "Vigilância com IA e detecção de ameaças em tempo real"
+      },
+      {
+        "title": "Resposta Instantânea",
+        "description": "Tempo médio de resposta inferior a 30 segundos"
+      },
+      {
+        "title": "Resultados Comprovados",
+        "description": "98% de precisão na detecção de ameaças com zero falsos alarmes"
+      }
+    ]
   },
   "problem": {
     "label": "A Vulnerabilidade",
@@ -321,6 +349,12 @@
       "value": "Taxa de instalação de 2.500 MZN e depósito de hardware de 4.000 MZN."
     },
     "cta": "Iniciar Integração",
+    "upfrontLabel": "Período de Pagamento Antecipado",
+    "perMonth": "/mês",
+    "monthsLabel": "m",
+    "percentOff": "({percent}% desconto)",
+    "saveLabel": "Poupe {savings} {currency}/ano ({percent}% de desconto)",
+    "totalCommitment": "Total a pagar: {total} {currency}",
     "plans": {
       "four": {
         "name": "4 Câmaras",
@@ -506,7 +540,21 @@
     "description": "Segurança Baseada em Inteligência. Defesa Impulsionada por IA. Transformando o CCTV padrão num ativo de segurança proativo através de IA avançada e supervisão humana de elite.",
     "quickLinks": "Links Rápidos",
     "contact": "Contacto",
-    "rights": "Todos os direitos reservados."
+    "rights": "Todos os direitos reservados.",
+    "sections": {
+      "solutions": "Soluções",
+      "company": "Empresa",
+      "resources": "Recursos"
+    },
+    "labels": {
+      "email": "Email",
+      "phone": "Telefone",
+      "location": "Localização"
+    },
+    "legal": {
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Serviço"
+    }
   },
   "notFound": {
     "title": "Página Não Encontrada",

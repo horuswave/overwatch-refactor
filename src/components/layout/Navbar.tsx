@@ -10,45 +10,39 @@ import ThemeDropdown from "./ThemeDropdown";
 import LanguageDropdown from "./LanguageDropdown";
 import { cn } from "@/lib/utils";
 
-const navLinks = [{ href: "/", key: "home" as const, description: "Overview" }];
+const navLinks = [{ href: "/", key: "home" as const }];
 
 const dropdownMenus = [
   {
-    title: "Solutions",
+    titleKey: "solutions" as const,
     links: [
-      {
-        href: "/business",
-        key: "business" as const,
-        description: "For Companies",
-      },
-      { href: "/homes", key: "homes" as const, description: "For Families" },
+      { href: "/business", key: "business" as const },
+      { href: "/homes", key: "homes" as const },
     ],
   },
   {
-    title: "Company",
+    titleKey: "company" as const,
     links: [
-      { href: "/about", key: "about" as const, description: "How It Works" },
+      { href: "/about", key: "about" as const },
     ],
   },
   {
-    title: "Resources",
+    titleKey: "resources" as const,
     links: [
-      { href: "/faq", key: "faq" as const, description: "Help" },
-      {
-        href: "/contact",
-        key: "contact" as const,
-        description: "Get in Touch",
-      },
+      { href: "/faq", key: "faq" as const },
+      { href: "/contact", key: "contact" as const },
     ],
   },
 ];
 
 const standaloneLinks = [
-  { href: "/#pricing", key: "pricing" as const, description: "Plans" },
+  { href: "/#pricing", key: "pricing" as const },
 ];
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const tNavSections = useTranslations("navSections");
+  const tMobile = useTranslations("mobileMenu");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDesktopDropdown, setOpenDesktopDropdown] = useState<string | null>(
@@ -122,7 +116,7 @@ export default function Navbar() {
     >
       <nav
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-        aria-label="Main navigation"
+        aria-label={t("aria.mainNav")}
       >
         <div className="flex h-16 md:h-20 items-center justify-between">
           <Link href="/" className="shrink-0" onClick={closeMobileMenu}>
@@ -145,21 +139,21 @@ export default function Navbar() {
 
             {/* Dropdown Menus */}
             {dropdownMenus.map((menu) => (
-              <div key={menu.title} className="relative group">
+              <div key={menu.titleKey} className="relative group">
                 <button
-                  onClick={() => handleDesktopDropdownClick(menu.title)}
-                  onMouseEnter={() => setOpenDesktopDropdown(menu.title)}
+                  onClick={() => handleDesktopDropdownClick(menu.titleKey)}
+                  onMouseEnter={() => setOpenDesktopDropdown(menu.titleKey)}
                   onMouseLeave={() => setOpenDesktopDropdown(null)}
                   className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
-                  aria-expanded={openDesktopDropdown === menu.title}
+                  aria-expanded={openDesktopDropdown === menu.titleKey}
                   aria-haspopup="true"
                 >
-                  {menu.title}
+                  {tNavSections(menu.titleKey)}
                   <ChevronDown
                     size={14}
                     className={cn(
                       "transition-transform",
-                      openDesktopDropdown === menu.title ? "rotate-180" : "",
+                      openDesktopDropdown === menu.titleKey ? "rotate-180" : "",
                     )}
                   />
                 </button>
@@ -169,9 +163,9 @@ export default function Navbar() {
                   className={cn(
                     "absolute top-full left-0 mt-0 w-48 bg-primary-darker/95 backdrop-blur-md border border-border rounded-lg shadow-xl py-2 z-50",
                     "opacity-0 invisible transition-all duration-200 group-hover:opacity-100 group-hover:visible",
-                    openDesktopDropdown === menu.title && "opacity-100 visible",
+                    openDesktopDropdown === menu.titleKey && "opacity-100 visible",
                   )}
-                  onMouseEnter={() => setOpenDesktopDropdown(menu.title)}
+                  onMouseEnter={() => setOpenDesktopDropdown(menu.titleKey)}
                   onMouseLeave={() => setOpenDesktopDropdown(null)}
                 >
                   {menu.links.map((link) => (
@@ -183,7 +177,7 @@ export default function Navbar() {
                     >
                       <div className="font-medium">{t(link.key)}</div>
                       <div className="text-xs text-foreground/50">
-                        {link.description}
+                        {t(`descriptions.${link.key}`)}
                       </div>
                     </Link>
                   ))}
@@ -219,7 +213,7 @@ export default function Navbar() {
               className="p-2 text-foreground hover:text-accent transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-expanded={mobileOpen}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-label={mobileOpen ? t("aria.closeMenu") : t("aria.openMenu")}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -242,7 +236,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                   <span>{t(link.key)}</span>
                   <span className="text-xs text-foreground/50">
-                    {link.description}
+                    {t(`descriptions.${link.key}`)}
                   </span>
                 </div>
               </Link>
@@ -250,25 +244,25 @@ export default function Navbar() {
 
             {/* Dropdown Menus - Collapsible */}
             {dropdownMenus.map((menu) => (
-              <div key={menu.title}>
+              <div key={menu.titleKey}>
                 <button
-                  onClick={() => toggleMobileDropdown(menu.title)}
+                  onClick={() => toggleMobileDropdown(menu.titleKey)}
                   className="w-full py-3 px-4 text-lg font-semibold text-accent hover:bg-accent/5 rounded-lg transition-colors flex items-center justify-between"
-                  aria-expanded={openMobileDropdowns.has(menu.title)}
+                  aria-expanded={openMobileDropdowns.has(menu.titleKey)}
                   aria-haspopup="true"
                 >
-                  <span>{menu.title}</span>
+                  <span>{tNavSections(menu.titleKey)}</span>
                   <ChevronDown
                     size={18}
                     className={cn(
                       "transition-transform",
-                      openMobileDropdowns.has(menu.title) ? "rotate-180" : "",
+                      openMobileDropdowns.has(menu.titleKey) ? "rotate-180" : "",
                     )}
                   />
                 </button>
 
                 {/* Collapsible Links */}
-                {openMobileDropdowns.has(menu.title) && (
+                {openMobileDropdowns.has(menu.titleKey) && (
                   <div className="pl-4 space-y-1 animate-in fade-in slide-in-from-top-2">
                     {menu.links.map((link) => (
                       <Link
@@ -280,7 +274,7 @@ export default function Navbar() {
                         <div className="flex items-center justify-between">
                           <span>{t(link.key)}</span>
                           <span className="text-xs text-foreground/50">
-                            {link.description}
+                            {t(`descriptions.${link.key}`)}
                           </span>
                         </div>
                       </Link>
@@ -301,7 +295,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                   <span>{t(link.key)}</span>
                   <span className="text-xs text-foreground/50">
-                    {link.description}
+                    {t(`descriptions.${link.key}`)}
                   </span>
                 </div>
               </Link>
@@ -310,11 +304,11 @@ export default function Navbar() {
             {/* Theme & Language Toggles */}
             <div className="mt-6 flex flex-col gap-4 border-t border-border pt-6">
               <div className="flex items-center justify-between px-4">
-                <span className="text-sm text-foreground/70">Theme</span>
+                <span className="text-sm text-foreground/70">{tMobile("theme")}</span>
                 <ThemeDropdown />
               </div>
               <div className="flex items-center justify-between px-4">
-                <span className="text-sm text-foreground/70">Language</span>
+                <span className="text-sm text-foreground/70">{tMobile("language")}</span>
                 <LanguageDropdown />
               </div>
             </div>

@@ -19,7 +19,7 @@ export default function Testimonials() {
   return (
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-3 sm:px-4 lg:px-6">
-        <SectionHeader label={t("label")} title={t("title")} />
+        <SectionHeader title={t("title")} />
 
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((item, i) => (

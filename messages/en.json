@@ -38,16 +38,30 @@
     "faq": "FAQ",
     "contact": "Contact",
     "cta": "Book Assessment",
-    "whatsapp": "Speak to an Agent"
+    "whatsapp": "Speak to an Agent",
+    "descriptions": {
+      "home": "Overview",
+      "business": "For Companies",
+      "homes": "For Families",
+      "about": "How It Works",
+      "faq": "Help",
+      "contact": "Get in Touch",
+      "pricing": "Plans"
+    },
+    "aria": {
+      "mainNav": "Main navigation",
+      "closeMenu": "Close menu",
+      "openMenu": "Open menu"
+    }
   },
-  "launchStrip": {
-    "launch": "Launching June 2026",
-    "pills": [
-      "Maputo / Matola priority",
-      "12-month contract",
-      "3 months cloud storage included",
-      "Prices exclude VAT"
-    ]
+  "navSections": {
+    "solutions": "Solutions",
+    "company": "Company",
+    "resources": "Resources"
+  },
+  "mobileMenu": {
+    "theme": "Theme",
+    "language": "Language"
   },
   "hero": {
     "badge": "Intelligence-Led Security",
@@ -55,7 +69,21 @@
     "headlineAccent": "an Active Security System",
     "description": "Overwatch helps businesses detect intrusions, suspicious activity, and security risks in real time by using AI-driven CCTV monitoring and remote incident management.",
     "ctaPrimary": "Book a Free Security Assessment",
-    "ctaSecondary": "Speak to an Agent"
+    "ctaSecondary": "Speak to an Agent",
+    "benefits": [
+      {
+        "title": "24/7 Active Monitoring",
+        "description": "AI-powered surveillance with real-time threat detection"
+      },
+      {
+        "title": "Instant Response",
+        "description": "Under 30-second average response time to alerts"
+      },
+      {
+        "title": "Proven Results",
+        "description": "98% threat detection accuracy with zero false alarms"
+      }
+    ]
   },
   "problem": {
     "label": "The Vulnerability",
@@ -321,6 +349,12 @@
       "value": "2,500 MZN installation fee & 4,000 MZN hardware deposit."
     },
     "cta": "Initialize Onboarding",
+    "upfrontLabel": "Upfront Payment Period",
+    "perMonth": "/month",
+    "monthsLabel": "mo",
+    "percentOff": "({percent}% off)",
+    "saveLabel": "Save {savings} {currency}/year ({percent}% off)",
+    "totalCommitment": "Total due: {total} {currency}",
     "plans": {
       "four": {
         "name": "4 Cameras",
@@ -506,7 +540,21 @@
     "description": "Intelligence-Led Security. AI-Driven Defense. Turning standard CCTV into a proactive security asset through advanced AI and elite human oversight.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "sections": {
+      "solutions": "Solutions",
+      "company": "Company",
+      "resources": "Resources"
+    },
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
   },
   "notFound": {
     "title": "Page Not Found",

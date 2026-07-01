@@ -5,13 +5,23 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlowCard from "@/components/ui/GlowCard";
-import { IMAGES } from "@/lib/constants";
 
-const benefitKeys = ["guards", "detection", "visibility", "accountability", "protection"] as const;
+const benefitKeys = [
+  "guards",
+  "detection",
+  "visibility",
+  "accountability",
+  "protection",
+] as const;
 const benefitImages: Partial<Record<(typeof benefitKeys)[number], string>> = {
-  guards: IMAGES.commandCenter,
-  detection: IMAGES.aiTech,
-  protection: IMAGES.deterrence,
+  guards: "/guard-sleeping.jpg",
+  detection: "/weapon-detection.png",
+  visibility:
+    "/surveillance-control-room.png",
+  accountability:
+    "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+  protection:
+    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
 };
 
 export default function WhyChoose() {
@@ -20,7 +30,10 @@ export default function WhyChoose() {
   return (
     <section className="py-20 md:py-28 bg-primary-darker/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader label={t("label")} title={t("title")} description={t("description")} />
+        <SectionHeader
+          title={t("title")}
+          description={t("description")}
+        />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefitKeys.map((key, i) => {
@@ -33,7 +46,9 @@ export default function WhyChoose() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={key === "protection" ? "md:col-span-2 lg:col-span-1" : ""}
+                className={
+                  key === "protection" ? "md:col-span-2 lg:col-span-1" : ""
+                }
               >
                 <GlowCard className="h-full overflow-hidden p-0 flex flex-col justify-between">
                   <div>

@@ -1,31 +1,9 @@
+"use client";
+
 import { useTranslations } from "next-intl";
-import { Mail, Phone, Globe, MapPin, ArrowRight, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Logo from "@/components/ui/Logo";
-
-const footerSections = [
-  {
-    title: "Solutions",
-    links: [
-      { href: "/business", key: "business" as const, description: "Enterprise Security" },
-      { href: "/homes", key: "homes" as const, description: "Home Protection" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/about", key: "about" as const, description: "How It Works" },
-      { href: "/", key: "home" as const, description: "Overview" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { href: "/faq", key: "faq" as const, description: "Help Center" },
-      { href: "/contact", key: "contact" as const, description: "Get in Touch" },
-    ],
-  },
-];
 
 const socialLinks = [
   {
@@ -47,11 +25,11 @@ const socialLinks = [
     ),
   },
   {
-    name: "YouTube",
-    href: "https://www.youtube.com/@overwatchmoz",
+    name: "Instagram",
+    href: "https://www.instagram.com/overwatchmoz",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
       </svg>
     ),
   },
@@ -63,7 +41,32 @@ export default function Footer() {
   const tContact = useTranslations("contact.info");
   const tMeta = useTranslations("metadata");
   const tCta = useTranslations("cta");
+  const tSections = useTranslations("navSections");
   const year = new Date().getFullYear();
+
+  const footerSections = [
+    {
+      titleKey: "solutions" as const,
+      links: [
+        { href: "/business", key: "business" as const, descKey: "business" as const },
+        { href: "/homes", key: "homes" as const, descKey: "homes" as const },
+      ],
+    },
+    {
+      titleKey: "company" as const,
+      links: [
+        { href: "/about", key: "about" as const, descKey: "about" as const },
+        { href: "/", key: "home" as const, descKey: "home" as const },
+      ],
+    },
+    {
+      titleKey: "resources" as const,
+      links: [
+        { href: "/faq", key: "faq" as const, descKey: "faq" as const },
+        { href: "/contact", key: "contact" as const, descKey: "contact" as const },
+      ],
+    },
+  ];
 
   return (
     <footer className="relative border-t border-border bg-primary-darker overflow-hidden">
@@ -104,9 +107,9 @@ export default function Footer() {
           {/* Quick links */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {footerSections.map((section) => (
-              <div key={section.title}>
+              <div key={section.titleKey}>
                 <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-                  {section.title}
+                  {tSections(section.titleKey)}
                 </h3>
                 <ul className="space-y-3">
                   {section.links.map((link) => (
@@ -119,7 +122,7 @@ export default function Footer() {
                           {tNav(link.key)}
                         </div>
                         <div className="text-muted text-xs mt-0.5 group-hover:text-accent/70 transition-colors">
-                          {link.description}
+                          {tNav(`descriptions.${link.descKey}`)}
                         </div>
                       </Link>
                     </li>
@@ -162,13 +165,13 @@ export default function Footer() {
         </div>
 
         {/* Middle section: Contact info */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <div className="flex items-start gap-3">
             <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
               <Mail size={16} className="text-accent" />
             </div>
             <div>
-              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Email</p>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">{t("labels.email")}</p>
               <a
                 href={`mailto:${tContact("email")}`}
                 className="text-foreground hover:text-accent text-sm transition-colors"
@@ -182,7 +185,7 @@ export default function Footer() {
               <Phone size={16} className="text-accent" />
             </div>
             <div>
-              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Phone</p>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">{t("labels.phone")}</p>
               <a
                 href={`tel:${tContact("phone").replace(/\s/g, "")}`}
                 className="text-foreground hover:text-accent text-sm transition-colors"
@@ -193,26 +196,10 @@ export default function Footer() {
           </div>
           <div className="flex items-start gap-3">
             <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
-              <Globe size={16} className="text-accent" />
-            </div>
-            <div>
-              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Website</p>
-              <a
-                href="https://www.overwatchmoz.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-accent text-sm transition-colors"
-              >
-                {tContact("website")}
-              </a>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 shrink-0">
               <MapPin size={16} className="text-accent" />
             </div>
             <div>
-              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">Location</p>
+              <p className="text-xs text-muted uppercase tracking-wider mb-0.5">{t("labels.location")}</p>
               <p className="text-foreground text-sm">{tContact("location")}</p>
             </div>
           </div>
@@ -230,7 +217,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-muted hover:text-accent text-xs transition-colors"
             >
-              Privacy Policy
+              {t("legal.privacy")}
             </a>
             <span className="text-border/50 text-xs">|</span>
             <a
@@ -239,7 +226,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-muted hover:text-accent text-xs transition-colors"
             >
-              Terms of Service
+              {t("legal.terms")}
             </a>
           </div>
         </div>

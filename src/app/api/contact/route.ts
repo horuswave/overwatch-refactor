@@ -1,7 +1,5 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
@@ -11,6 +9,17 @@ export async function POST(request: Request) {
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
+
+    // Create nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: parseInt(process.env.SMTP_PORT || "587"),
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
 
     const emailContent = `
 New Site Assessment Request from Overwatch Website
@@ -25,17 +34,14 @@ Message:
 ${message}
     `.trim();
 
-    if (resend) {
-      await resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL || "Overwatch Website <onboarding@resend.dev>",
-        to: process.env.CONTACT_EMAIL || "info@overwatchmoz.com",
-        replyTo: email,
-        subject: `[Overwatch] Site Assessment Request — ${name}`,
-        text: emailContent,
-      });
-    } else {
-      console.log("Contact form submission (Resend not configured):", emailContent);
-    }
+    // Send email
+    await transporter.sendMail({
+      from: process.env.SMTP_FROM_EMAIL || "Overwatch Website <noreply@overwatchmoz.com>",
+      to: process.env.CONTACT_EMAIL || "info@overwatchmoz.com",
+      replyTo: email,
+      subject: `[Overwatch] Site Assessment Request — ${name}`,
+      text: emailContent,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

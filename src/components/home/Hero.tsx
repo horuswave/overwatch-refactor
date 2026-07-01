@@ -6,11 +6,17 @@ import { useTranslations } from "next-intl";
 import { Shield, Clock, CheckCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import TechGrid from "@/components/ui/TechGrid";
-import { IMAGES, WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL } from "@/lib/constants";
+
+const benefitIcons = [Shield, Clock, CheckCircle];
 
 export default function Hero() {
   const t = useTranslations("hero");
   const tStats = useTranslations("stats");
+  const benefits = t.raw("benefits") as {
+    title: string;
+    description: string;
+  }[];
 
   const stats = [
     { value: tStats("monitoring.value"), label: tStats("monitoring.label") },
@@ -18,41 +24,28 @@ export default function Hero() {
     { value: tStats("compliance.value"), label: tStats("compliance.label") },
   ];
 
-  const benefits = [
-    {
-      icon: Shield,
-      title: "24/7 Active Monitoring",
-      description: "AI-powered surveillance with real-time threat detection",
-    },
-    {
-      icon: Clock,
-      title: "Instant Response",
-      description: "Under 30-second average response time to alerts",
-    },
-    {
-      icon: CheckCircle,
-      title: "Proven Results",
-      description: "98% threat detection accuracy with zero false alarms",
-    },
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-hero">
-      <TechGrid className="absolute inset-0" />
-
-      <div className="absolute inset-0">
+      {/* Background image layer */}
+      <div className="absolute inset-0 z-0">
         <Image
-          src={IMAGES.hero}
+          src="/u68Kg.jpg"
           alt=""
           fill
           priority
-          className="object-cover opacity-20"
           sizes="100vw"
+          className="object-cover opacity-55"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/92 via-primary-dark/95 to-primary-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/65 via-primary-dark/70 to-primary-dark/85" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-16 md:pt-28 md:pb-20">
+      {/* Tech grid layer */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <TechGrid className="absolute inset-0" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-16 md:pt-28 md:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,9 +57,13 @@ export default function Hero() {
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-            <span className="text-foreground block drop-shadow-xl">{t("headline")}</span>
+            <span className="text-foreground block drop-shadow-xl">
+              {t("headline")}
+            </span>
             {t("headlineAccent") && (
-              <span className="text-accent glow-text block">{t("headlineAccent")}</span>
+              <span className="text-accent glow-text block">
+                {t("headlineAccent")}
+              </span>
             )}
           </h1>
 
@@ -83,7 +80,6 @@ export default function Hero() {
             </Button>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-border/50">
             {stats.map((stat, i) => (
               <motion.div
@@ -92,7 +88,9 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-accent drop-shadow-sm">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent drop-shadow-sm">
+                  {stat.value}
+                </div>
                 <div className="text-sm text-foreground mt-1 uppercase tracking-wider font-semibold">
                   {stat.label}
                 </div>

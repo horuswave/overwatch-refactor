@@ -18,12 +18,18 @@ export default function FAQAccordion({ limit }: { limit?: number }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {items.map((item, index) => (
         <div
           key={item.question}
-          className="rounded-xl border border-border bg-card/40 overflow-hidden"
+          className="relative rounded-xl border border-border bg-card/40 backdrop-blur-sm overflow-hidden group hover:border-accent/30 transition-all duration-300"
         >
+          {/* Tech corner accents */}
+          <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-accent/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-accent/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-accent/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-accent/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+          
           <button
             type="button"
             className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left hover:bg-accent/5 transition-colors"

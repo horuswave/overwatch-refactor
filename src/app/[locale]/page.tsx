@@ -37,7 +37,6 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   const Hero = (await import("@/components/home/Hero")).default;
-  const LaunchStrip = (await import("@/components/home/LaunchStrip")).default;
   const Problem = (await import("@/components/home/Problem")).default;
   const WhyChoose = (await import("@/components/home/WhyChoose")).default;
   const Solution = (await import("@/components/home/Solution")).default;
@@ -51,7 +50,6 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <Hero />
-      <LaunchStrip />
       <Problem />
       <WhyChoose />
       <Solution />
