@@ -25,6 +25,10 @@
     "contact": {
       "title": "Contacte-nos | Overwatch",
       "description": "Solicite uma avaliação gratuita do seu site. Contacte a Overwatch para guarda virtual com IA em Maputo e em todo Moçambique."
+    },
+    "careers": {
+      "title": "Carreiras | Junte-se à Equipa Overwatch",
+      "description": "Junte-se à equipa Overwatch e ajude a construir o futuro da segurança com IA. Consulte as vagas disponíveis e submeta o seu CV."
     }
   },
   "nav": {
@@ -37,6 +41,7 @@
     "pricing": "Preços",
     "faq": "FAQ",
     "contact": "Contacto",
+    "careers": "Carreiras",
     "cta": "Avaliação Gratuita",
     "whatsapp": "Falar com um Agente",
     "descriptions": {
@@ -46,7 +51,8 @@
       "about": "Como Funciona",
       "faq": "Ajuda",
       "contact": "Contacte-nos",
-      "pricing": "Planos"
+      "pricing": "Planos",
+      "careers": "Junte-se à Nossa Equipe"
     },
     "aria": {
       "mainNav": "Navegação principal",
@@ -560,5 +566,60 @@
     "title": "Página Não Encontrada",
     "description": "A página que procura não existe ou foi movida.",
     "back": "Voltar ao Início"
+  },
+  "careers": {
+    "label": "Junte-se à Nossa Equipe",
+    "title": "Construa o Futuro da Segurança Connosco",
+    "description": "Estamos a crescer rapidamente e procuramos indivíduos talentosos que queiram fazer a diferença. Junte-se à nossa equipa e ajude-nos a redefinir as operações de segurança.",
+    "whyJoin": {
+      "title": "Porquê Escolher a Overwatch?",
+      "description": "Faça parte de uma equipa que está a transformar a indústria de segurança com tecnologia de IA de ponta e experiência humana de elite.",
+      "items": [
+        {
+          "title": "Trabalhe com IA de Ponta",
+          "description": "Ganhe experiência prática com sistemas avançados de vigilância com IA e mantenha-se na vanguarda da inovação em tecnologia de segurança."
+        },
+        {
+          "title": "Desenvolva a Sua Carreira",
+          "description": "Investimos no desenvolvimento profissional da nossa equipa com programas de formação, certificações e percursos de progressão na carreira claros."
+        },
+        {
+          "title": "Faça um Impacto Real",
+          "description": "O seu trabalho contribui directamente para proteger empresas e famílias em Moçambique, tornando as comunidades mais seguras."
+        },
+        {
+          "title": "Cultura Colaborativa",
+          "description": "Junte-se a uma equipa de profissionais apaixonados que se apoiam mutuamente, partilham conhecimento e celebram o sucesso em conjunto."
+        },
+        {
+          "title": "Benefícios Competitivos",
+          "description": "Oferecemos salários competitivos, seguro de saúde, bónus de desempenho e um ambiente de trabalho de apoio."
+        }
+      ]
+    },
+    "openings": {
+      "title": "Vagas Disponíveis",
+      "description": "Estamos sempre à procura de indivíduos talentosos para se juntarem à nossa equipa. Envie-nos o seu CV e vamos explorar oportunidades juntos.",
+      "spontaneous": "Candidaturas Espontâneas",
+      "spontaneousDescription": "Estamos a crescer rapidamente e procuramos sempre indivíduos talentosos para se juntarem à nossa equipa. Não encontra uma vaga adequada às suas competências? Envie-nos o seu CV de qualquer forma — estamos sempre interessados em conhecer pessoas apaixonadas."
+    },
+    "cta": {
+      "title": "Não Encontra uma Vaga Adequada?",
+      "description": "Estamos sempre à procura de indivíduos talentosos para se juntarem à nossa equipa. Envie-nos o seu CV e deixe-nos saber como pode contribuir para a missão da Overwatch."
+    },
+    "form": {
+      "title": "Submeta a Sua Candidatura",
+      "description": "Preencha o formulário abaixo e faça upload do seu CV. Analisaremos a sua candidatura e entraremos em contacto dentro de 5-7 dias úteis.",
+      "name": "Nome Completo",
+      "email": "Endereço de E-mail",
+      "phone": "Número de Telefone",
+      "position": "Cargo Pretendido",
+      "cv": "Upload de CV",
+      "message": "Mensagem de Apresentação",
+      "submit": "Submeter Candidatura",
+      "submitting": "A submeter...",
+      "success": "Candidatura Submetida!",
+      "error": "Ocorreu um erro. Por favor tente novamente ou envie-nos um e-mail diretamente."
+    }
   }
 }

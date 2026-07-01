@@ -25,6 +25,10 @@
     "contact": {
       "title": "Contact Us | Overwatch",
       "description": "Request a free site assessment. Contact Overwatch for AI-powered virtual guarding in Maputo and across Mozambique."
+    },
+    "careers": {
+      "title": "Careers | Join Overwatch Team",
+      "description": "Join the Overwatch team and help build the future of AI-powered security. View open positions and submit your CV."
     }
   },
   "nav": {
@@ -37,6 +41,7 @@
     "pricing": "Pricing",
     "faq": "FAQ",
     "contact": "Contact",
+    "careers": "Careers",
     "cta": "Book Assessment",
     "whatsapp": "Speak to an Agent",
     "descriptions": {
@@ -46,7 +51,8 @@
       "about": "How It Works",
       "faq": "Help",
       "contact": "Get in Touch",
-      "pricing": "Plans"
+      "pricing": "Plans",
+      "careers": "Join Our Team"
     },
     "aria": {
       "mainNav": "Main navigation",
@@ -560,5 +566,60 @@
     "title": "Page Not Found",
     "description": "The page you're looking for doesn't exist or has been moved.",
     "back": "Back to Home"
+  },
+  "careers": {
+    "label": "Join Our Team",
+    "title": "Build the Future of Security With Us",
+    "description": "We're growing fast and looking for talented individuals who want to make an impact. Join our team and help us redefine security operations.",
+    "whyJoin": {
+      "title": "Why Join Overwatch?",
+      "description": "Be part of a team that's transforming the security industry with cutting-edge AI technology and elite human expertise.",
+      "items": [
+        {
+          "title": "Work with Cutting-Edge AI",
+          "description": "Gain hands-on experience with advanced AI surveillance systems and stay at the forefront of security technology innovation."
+        },
+        {
+          "title": "Grow Your Career",
+          "description": "We invest in our team's professional development with training programs, certifications, and clear career progression paths."
+        },
+        {
+          "title": "Make a Real Impact",
+          "description": "Your work directly contributes to protecting businesses and families across Mozambique, making communities safer."
+        },
+        {
+          "title": "Collaborative Culture",
+          "description": "Join a team of passionate professionals who support each other, share knowledge, and celebrate success together."
+        },
+        {
+          "title": "Competitive Benefits",
+          "description": "We offer competitive salaries, health insurance, performance bonuses, and a supportive work environment."
+        }
+      ]
+    },
+    "openings": {
+      "title": "Open Positions",
+      "description": "We're always looking for talented individuals to join our team. Send us your CV and let's explore opportunities together.",
+      "spontaneous": "Spontaneous Applications",
+      "spontaneousDescription": "We're growing fast and always looking for talented individuals to join our team. Don't see a position that matches your skills? Send us your CV anyway — we're always interested in meeting passionate people."
+    },
+    "cta": {
+      "title": "Don't See a Perfect Fit?",
+      "description": "We're always looking for talented individuals to join our team. Send us your CV and let us know how you can contribute to Overwatch's mission."
+    },
+    "form": {
+      "title": "Submit Your Application",
+      "description": "Fill out the form below and upload your CV. We'll review your application and get back to you within 5-7 business days.",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "position": "Position Applied For",
+      "cv": "Upload CV",
+      "message": "Cover Message",
+      "submit": "Submit Application",
+      "submitting": "Submitting...",
+      "success": "Application Submitted!",
+      "error": "Something went wrong. Please try again or email us directly."
+    }
   }
 }

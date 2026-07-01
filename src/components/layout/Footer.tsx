@@ -56,6 +56,7 @@ export default function Footer() {
       titleKey: "company" as const,
       links: [
         { href: "/about", key: "about" as const, descKey: "about" as const },
+        { href: "/careers", key: "careers" as const, descKey: "careers" as const },
         { href: "/", key: "home" as const, descKey: "home" as const },
       ],
     },
