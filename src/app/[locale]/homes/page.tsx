@@ -36,12 +36,12 @@ export default async function HomesPage({ params }: Props) {
 
   return (
     <>
-      {/* HERO SECTION - Full Height + Premium Overlay (same style as Business) */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative min-h-[70vh] md:min-h-[600px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/homes-bg.jpg" // ← Use the new image you generated
+            src="/homes-bg.jpg"
             alt="Residential AI Surveillance"
             fill
             className="object-cover"
@@ -50,9 +50,9 @@ export default async function HomesPage({ params }: Props) {
             quality={90}
           />
 
-          {/* Reversed Overlay: Lighter top, Darker bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/75 to-black/90" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/85 via-transparent to-transparent" />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/70 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(at_center,#4f46e520_0%,transparent_70%)]" />
         </div>
 
@@ -93,26 +93,7 @@ export default async function HomesPage({ params }: Props) {
           </div>
 
           {/* Detection Demo Box */}
-          <div className="mt-12 relative aspect-[21/9] rounded-xl overflow-hidden border border-border">
-            <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-            />
-            <div className="absolute inset-0 bg-primary-dark/50" />
-            <div className="absolute top-[25%] left-[15%] w-[30%] h-[40%] detection-box rounded">
-              <span className="absolute -top-7 left-0 text-xs text-accent font-mono bg-primary-dark/80 px-2 py-1 rounded">
-                PERIMETER · ACTIVE
-              </span>
-            </div>
-            <div className="absolute bottom-[20%] right-[20%] w-[25%] h-[30%] detection-box rounded border-green-400/60">
-              <span className="absolute -top-7 left-0 text-xs text-green-400 font-mono bg-primary-dark/80 px-2 py-1 rounded">
-                LOUNGE AREA · CLEAR
-              </span>
-            </div>
-          </div>
+          
         </div>
       </section>
 

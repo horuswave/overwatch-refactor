@@ -55,7 +55,7 @@ export default async function BusinessPage({ params }: Props) {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/business-bg.jpg"
@@ -66,9 +66,9 @@ export default async function BusinessPage({ params }: Props) {
             sizes="100vw"
             quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/75 to-black/90" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/75 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(at_center,#4f46e520_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/70 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(at_center,#4f46e520_0%,transparent_70%)]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 text-white">

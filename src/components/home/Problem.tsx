@@ -92,18 +92,13 @@ export default function Problem() {
             className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border"
           >
             <Image
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&q=80"
+              src="/monitoring.jpg"
               alt=""
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-primary-dark/40" />
-            <div className="absolute top-[28%] left-[18%] w-[42%] h-[45%] detection-box rounded">
-              <span className="absolute -top-7 left-0 text-xs text-accent font-mono bg-primary-dark/90 px-2 py-1 rounded border border-accent/30">
-                AI · MONITORING
-              </span>
-            </div>
+            
           </motion.div>
         </div>
       </div>
