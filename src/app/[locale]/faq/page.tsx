@@ -32,7 +32,7 @@ export default async function FAQPage({ params }: Props) {
   return (
     <>
       {/* HERO SECTION - Matching Business Page Style */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[50vh] md:min-h-[400px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -65,7 +65,7 @@ export default async function FAQPage({ params }: Props) {
       </section>
 
       {/* FAQ Content Section */}
-      <section className="py-20 md:py-28 bg-primary-darker/30 border-t border-border">
+      <section className="py-8 md:py-8 bg-primary-darker/30 border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <FAQAccordion />
         </div>

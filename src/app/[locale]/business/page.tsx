@@ -55,7 +55,7 @@ export default async function BusinessPage({ params }: Props) {
 
   return (
     <>
-      <section className="relative min-h-[70vh] md:min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative min-h-[65vh] md:min-h-[550px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/business-bg.jpg"

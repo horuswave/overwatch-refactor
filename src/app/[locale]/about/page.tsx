@@ -31,8 +31,8 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
-      {/* HERO SECTION - Consistent with Business & FAQ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative min-h-[50vh] md:min-h-[400px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -45,10 +45,10 @@ export default async function AboutPage({ params }: Props) {
             quality={90}
           />
 
-          {/* Matching Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/60 to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/75 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(at_center,#4f46e520_0%,transparent_50%)]" />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/70 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(at_center,#4f46e520_0%,transparent_70%)]" />
         </div>
 
         {/* Content */}
@@ -65,7 +65,7 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       {/* Flow / Timeline Section */}
-      <section className="py-20 md:py-28">
+      <section className="py-8 md:py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative">
             <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-accent/20 to-transparent" />
@@ -73,10 +73,14 @@ export default async function AboutPage({ params }: Props) {
               {flow.map((item, i) => (
                 <div key={item.step} className="relative lg:pl-20">
                   <div className="hidden lg:flex absolute left-0 w-16 h-16 rounded-full bg-accent/10 border border-accent/30 items-center justify-center backdrop-blur-sm">
-                    <span className="text-accent font-bold text-lg">{item.step}</span>
+                    <span className="text-accent font-bold text-lg">
+                      {item.step}
+                    </span>
                   </div>
                   <GlowCard techCorners={true}>
-                    <div className="lg:hidden text-accent font-bold text-sm mb-2">{item.step}</div>
+                    <div className="lg:hidden text-accent font-bold text-sm mb-2">
+                      {item.step}
+                    </div>
                     <h3 className="text-xl font-bold text-foreground mb-2 glow-text">
                       {item.title}
                     </h3>

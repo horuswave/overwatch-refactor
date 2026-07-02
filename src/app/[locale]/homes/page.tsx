@@ -37,7 +37,7 @@ export default async function HomesPage({ params }: Props) {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative min-h-[70vh] md:min-h-[600px] flex items-center overflow-hidden">
+      <section className="relative min-h-[65vh] md:min-h-[550px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -93,7 +93,6 @@ export default async function HomesPage({ params }: Props) {
           </div>
 
           {/* Detection Demo Box */}
-          
         </div>
       </section>
 
